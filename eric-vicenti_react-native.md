@@ -25,7 +25,7 @@
 | **ericvicenti:** | jean Good question! The Animation off-threading effort has mostly been pioneered by Krzysztof Magiera who has been working with the Exponent team. We haven't prioritized it yet, so we absolutely want some help from the community in solving this problem! |
 | Joshua: | [Q&A] What would you say the mix is between RN and native components and coding in Facebook apps? |
 | **ericvicenti:** | Joshua The main app is still native, but many new screens are being developed in react. We typically try to use RN where there isn't heavy data overlap between other screens in the app. As our data handling solutions get more advanced, we can start having bigger mixes of native and react code |
-| monastic.panic said: | [Q&A] Whats the future for RN platform wise? At this point mobile platforms are mostly covered but what about other targets: Xboxes, Roku's IOT? Does RN become another sort of substrate platform like react core? |
+| monastic.panic: | [Q&A] Whats the future for RN platform wise? At this point mobile platforms are mostly covered but what about other targets: Xboxes, Roku's IOT? Does RN become another sort of substrate platform like react core? |
 | **ericvicenti:** | monastic.panic I think that would be awesome, but we aren't there yet. We still have a lot of work when it comes to easing the differences between iOS and Android. Eventually it would be awesome to get RN working on everything from web to TV interfaces, but we would need a lot of community support to make that  |happen
 | Sinistral: | [Q&A] Any tips on how to ease a company into looking into React-Native that is very leery of code once run everywhere solutions? I know RN isn't exactly code once, but it's close to it. This has less to do with the code itself and more of what's a good way to introduce the idea in a more persuasive way. We  |currently have our Desktop team doing app development and it puts a giant burden on them, I'd like to lessen that greatly.
 | **ericvicenti:** | Sinistral, the write-once-run-anywhere solutions are often problematic because they invite a lot more people to build for a platform that they aren't highly familiar with. To ship a successful app, you are much better off having native platform developers work alongside react developers. |
@@ -63,7 +63,7 @@
 | chirag04: | ericvicenti [Q&A] what percent of Groups app is using NavigationExperimental if at all? |
 | **ericvicenti:** | chirag04, 'percent' can be a tricky thing to define when it comes to API adoption, especially in hybrid apps like Groups. An upcoming release of Groups will switch to NavigationExperimental for all navigation that happens within the react views |
 | Joshua: | [Q&A] What are the biggest needs that the community could fill in right now that aren't being actively tackled by the RN FB team? |
-| ericvicenti said: | Joshua The community is pretty amazing when it comes to supporting each-other, and I want to see that get even better. The docs aren't nearly as mature as the knowledge of the community, and it would be amazing if everybody pitched in on the documentation and example code to help raise the bar for everyone else.
+| **ericvicenti:** | Joshua The community is pretty amazing when it comes to supporting each-other, and I want to see that get even better. The docs aren't nearly as mature as the knowledge of the community, and it would be amazing if everybody pitched in on the documentation and example code to help raise the bar for everyone else.
 | geirman: | [Q&A] I'd love a "Getting Started with NavigationExperimental" style tutorial. I spent an evening trying to dig into the docs and UIExplorer examples, but didn't get far. Something that starts simple and builds up from there would be awesome. Are you aware of any efforts along those lines? ETA? |
 | **ericvicenti:** | geirman, that is on my todo list. I have started a version here, but I decided to move away from the TicTacToe example and I haven't gone back to revise and finish it:  https://github.com/ericvicenti/navigation-rfc/blob/master/Docs/Guide.md |
 | daniel: | [Q&A] I'm working on a RN app on the FB platform, do you know if it's possible to contact FB to see if they'd be interested in showcasing it? |
@@ -79,33 +79,33 @@
 | Sinistral: | Good choice for Brawl |
 | Sinistral: | Metaknight got castrated in Wii U : ( |
 | geirman: | (googles smash bros meta knight) |
-| emilio: | So, in what version will navigationExperimental, no longer be experimental? when will it be in the main docs? I've played with it and it feels pretty stable |
+| emilio: | [Q&A] So, in what version will navigationExperimental, no longer be experimental? when will it be in the main docs? I've played with it and it feels pretty stable |
 | **ericvicenti:** | emilio, the API is still changing in minor ways, so there has been a bit of hesitation on my part with the docs. (The version in master is even ahead of 0.22 already) |
 | **ericvicenti:** | So I'm not sure if I should publish docs that will be out of sync with the current release. brentvatne, I'm sure you can help. 😄 |
 | brentvatne: | 😅 |
 | brentvatne: | in 1 week i will have more time to help on docs! |
 | brentvatne: | that would be great to see more people pitch in on that |
+| brentvatne: | you can give NavigationExperimental a try by reading the docs and trying to build things, and whenever something is confusing you can either try to clarify or submit a PR for it |
 | emilio: | brentvatne looking forward to it! where are the navigationExperimental docs being prepared, so we can contribute |
 | **ericvicenti:** | The NavigationExperimental docs are being worked on here: |
 | **ericvicenti:** | https://github.com/ericvicenti/navigation-rfc/blob/master/Docs |
-| brentvatne: | you can give NavigationExperimental a try by reading the docs and trying to build things, and whenever something is confusing you can either try to clarify or submit a PR for it |
 | **ericvicenti:** | Contributions to the Navigation docs would be greatly appreciated!! It is also a great way to make sure you understand the code! |
 | **ericvicenti:** | Also, it would be awesome if one of you could help by adding comments to the navigation example code in RN master |
+| emilio: | ericvicenti regarding the Guide, you are planning to completely rewrite it, aren't you? |
 | **ericvicenti:** | emilio, I hope to swap out the example and go into more complicated navigation eventually |
 | emilio: | So, are contributions to the current guide welcome?  Or should we wait till you start the new one |
 | **ericvicenti:** | emilio, they are very welcome! |
-| jean: | [Q&A] I noticed rendering can take some time when you try to render a grid with simple items (Image or Text), let's say 50. Is that something you observed on your side? Are there possibilities to mitigate that? |
+| jean: | [Q&A] I noticed rendering can take some time when you try to render a grid with simple items (Image or Text), let's say 50. Is that something you observed on your side? Are there possibilities to mitigate that? | while rendering it |
 | **ericvicenti:** | jean, we generally try to break up the JS renders into smaller chunks. sahrens recently released something along those lines: https://github.com/facebook/react-native/pull/4953/files |
 | brentvatne: | jean - make sure you read this for more background on what eric mentioned above re: breaking up js renders: https://www.facebook.com/notes/andy-street/react-native-scheduling/10153916310914590 |
+| jean: | ericvicenti I saw that one and it's interesting, but I needed to display a table at once (fully visible, no scroll) and incremental rendering wasn't giving a good user experience. |
+| brentvatne: | then you can incrementally render it and show loading while it's happening then the actual table when it's complete |
+| brentvatne: | using something like IncrementalPresenter |
+| brentvatne: | this will allow you to maintain responsiveness
+| jean: | brentvatne yes true, |
+| **ericvicenti:** | jean, yeah it can be tricky when you have a lot of views that you need to flush to the main thread at once. Maybe you could mount the view ahead of time and simply display it when you need to |
 | easilyBaffled: | [Q&A] are there any solutions for running JS in the background, other than the allowed things like location and sound? |
 | **ericvicenti:** | easilyBaffled sorry, not that I'm currently aware of! There is surely a way if you figure it out on the native side |
-| emilio: | ericvicenti regarding the Guide, you are planning to completely rewrite it, aren't you? |
-| jean: | ericvicenti I saw that one and it's interesting, but I needed to display a table at once (fully visible, no scroll) and incremental rendering wasn't giving a good user experience. |
-| brentvatne: | jean - then you can incrementally render it and show loading while it's happening then the actual table when it's complete |
-| brentvatne: | using something like IncrementalPresenter |
-| brentvatne: | this will allow you to maintain responsiveness while rendering it |
-| **ericvicenti:** | jean, yeah it can be tricky when you have a lot of views that you need to flush to the main thread at once. Maybe you could mount the view ahead of time and simply display it when you need to |
-| jean: | brentvatne yes true, |
 | emilio: | ericvicenti Thank you very much for taking our questions, and for the initiative for a better navigation! |
 | brentvatne: | ericvicenti thanks for the beard |
 | **ericvicenti:** | jean, along the lines of Joshua's question about how the community can help, I would really like to see the community step up and try to crack some of these hard problems. Take gestures for example. We haven't "solved" gesture handling at Fb, but we're happy to take an open approach to find solutions. |
