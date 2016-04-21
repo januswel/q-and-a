@@ -134,7 +134,7 @@
 | **gaearon** | @mxstbr I’m happy to swap |
 | DevAlien | **are there any project of yours we can contribute to?** |
 | sturmundweb (Francesca) | Great question to ask @DevAlien |
-| **gaearon** | @DevAlien Yes, I’m working on React Hot Loader 3 but don’t have the time to write the docs to release it as stable. Help is much appreciated: https://github.com/**gaearon**/react-hot-loader/issues/243. |
+| **gaearon** | @DevAlien Yes, I’m working on React Hot Loader 3 but don’t have the time to write the docs to release it as stable. Help is much appreciated: https://github.com/gaearon/react-hot-loader/issues/243. |
 | far | **Will it be possible to define lifecycle hooks like componentDidMount etc. for stateless function components? or we should just stay with classes for this?** |
 | **gaearon** | @far There are no such plans. Yea, use classes for this. We might add functional stateful components later that might allow this, but this is distant future. |
 | standayweb | **When is it better to just store state in a component? people sometimes seem to use Redux for everything and not store state in components at all.** |
